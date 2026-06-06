@@ -1,0 +1,6 @@
+{
+  "name": "FA TV",
+  "description": "A feature-rich, high-performance IPTV player to stream M3U8 channels, upload M3U playlists, save favorites, and explore public global and local streams.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
