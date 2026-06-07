@@ -445,18 +445,19 @@ export default function App() {
                 </div>
 
                 {/* FA TV Custom Styled Logo Block */}
-                <div className="bg-indigo-950/20 border border-indigo-500/20 rounded-xl p-3 flex flex-col items-center justify-center shadow-lg hover:border-indigo-500/50 transition-all group relative overflow-hidden">
+                <div className="bg-black/40 border border-red-500/20 rounded-xl p-3 flex flex-col items-center justify-center shadow-lg hover:border-red-500/50 transition-all group relative overflow-hidden">
                   <span className="absolute top-1 right-1 flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-indigo-500"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
                   </span>
                   <div className="relative w-12 h-12 flex items-center justify-center">
-                    {/* FA TV Custom dynamic badge */}
-                    <div className="w-11 h-11 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-indigo-500/30">
-                      <Tv className="w-5 h-5 stroke-[2.5]" />
-                    </div>
+                    <img 
+                      src="https://inovace-client-dev.s3.ap-southeast-1.amazonaws.com/profilepic-214-foysal1-1780813468.png" 
+                      alt="FA TV Logo" 
+                      className="w-11 h-11 object-contain drop-shadow-[0_0_4px_rgba(239,68,68,0.4)]"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
-                  <span className="text-[10px] md:text-[11px] font-extrabold text-indigo-300 mt-2 font-mono tracking-wider group-hover:text-indigo-200 transition-colors">FA &nbsp;TV</span>
                 </div>
 
               </div>
@@ -523,28 +524,19 @@ export default function App() {
         {/* Modern App Header Bar */}
         <header className="h-16 border border-white/10 bg-[#121214]/90 backdrop-blur-md flex items-center justify-between px-6 shrink-0 mb-6 rounded-xl shadow-xl">
           <div className="flex items-center gap-8">
-            <div className="flex items-center gap-2.5">
-              {/* Animated Live Logo */}
-              <div className="relative w-10 h-10 flex items-center justify-center">
-                {/* Wave rings */}
-                <span className="absolute inline-flex h-full w-full rounded-xl bg-indigo-500/30 animate-pulse"></span>
-                <span className="absolute inline-flex h-12 w-12 rounded-full border border-indigo-500/20 animate-ping opacity-75"></span>
-                
-                {/* Core badge */}
-                <div className="relative w-9 h-9 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-indigo-500/40">
-                  <Tv className="w-5 h-5 stroke-[2.5] animate-bounce [animation-duration:3s]" />
-                  
-                  {/* Glowing live indicator dot */}
-                  <span className="absolute top-1 right-1 flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
-                  </span>
-                </div>
+            <div className="flex items-center gap-3">
+              {/* Brand Logo design of FA TV */}
+              <div 
+                className="flex items-center gap-3 cursor-pointer select-none group"
+                onClick={() => window.location.reload()}
+              >
+                <img 
+                  src="https://inovace-client-dev.s3.ap-southeast-1.amazonaws.com/profilepic-214-foysal1-1780813468.png" 
+                  alt="FA TV Logo" 
+                  className="h-11 w-11 object-contain hover:scale-105 active:scale-95 transition-all duration-300 drop-shadow-[0_0_6px_rgba(229,9,20,0.6)]"
+                  referrerPolicy="no-referrer"
+                />
               </div>
-
-              <span className="font-extrabold text-2xl tracking-tight text-white flex items-center">
-                FA&nbsp;<span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent font-mono tracking-widest uppercase font-black">TV</span>
-              </span>
             </div>
           </div>
 
