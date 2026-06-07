@@ -96,10 +96,28 @@ export default function App() {
       try {
         const primaryUrl = 'https://raw.githubusercontent.com/SHAJON-404/iptv/refs/heads/main/app/data/channels.m3u';
         const proxyUrl = `/api/proxy-m3u?url=${encodeURIComponent(primaryUrl)}`;
-        const res = await fetch(proxyUrl);
-        if (!res.ok) {
-          throw new Error(`Failed to load default playlist: ${res.statusText}`);
+        
+        let res;
+        let firstAttemptError: any = null;
+        
+        try {
+          console.log('Attempting direct fetch of remote playlist (github is CORS friendly)...');
+          res = await fetch(primaryUrl);
+          if (!res.ok) {
+            throw new Error(`Direct fetch returned status: ${res.status}`);
+          }
+          console.log('Direct fetch of remote playlist succeeded!');
+        } catch (err: any) {
+          console.warn('Direct fetch from github failed or blocked. Trying server proxy...', err);
+          firstAttemptError = err;
+          
+          res = await fetch(proxyUrl);
+          if (!res.ok) {
+            throw new Error(`Proxy fallback failed with status: ${res.status}. Direct fetch also failed with error: ${firstAttemptError?.message || 'unknown'}`);
+          }
+          console.log('Server proxy fallback succeeded!');
         }
+
         const m3uText = await res.text();
         const parsed = parseM3U(m3uText, 'FA TV');
         if (parsed.length > 0) {
